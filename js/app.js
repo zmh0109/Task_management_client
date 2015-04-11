@@ -1,4 +1,3 @@
-// var demoApp = angular.module('demoApp', ['demoControllers']);
 
 var demoApp = angular.module('demoApp', ['720kb.datepicker','ngRoute', 'demoControllers', 'demoServices']);
 
