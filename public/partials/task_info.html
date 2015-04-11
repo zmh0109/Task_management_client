@@ -1,0 +1,11 @@
+<div class="text-center">
+	<h3>Task</h3>
+	<h4>gotta get this done</h4>
+	<a href="#/tasks/{{task._id}}/edit"><button ng-click="editTask()" class="button tiny info">Edit Task</button></a>
+	<br>
+	<p>Name: {{task.name}}</p>	
+	<p>Description: {{task.description}}</p>
+	<p>Deadline: {{task.deadline}}</p>
+	<p>Completed: {{task.completed}}</p>
+	<p>Assigned: {{task.assignedUserName}}</p>
+</div>

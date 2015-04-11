@@ -1,0 +1,26 @@
+<div class = "row text-center">
+	<a class="button" href="#/add_task">Add Task</a>
+</div>
+
+<button ng-click="prev()">Previous</button>
+<button ng-click="next()" class="right ">Next</button>
+<div class = "row text-center" class="pagination">
+    <!--<ul class="pagination" >-->
+        <!--<li class="arrow unavailable"><a href="">&laquo;</a></li>-->
+        <!--<li class="current">-->
+          <ul ng-repeat="task in tasks.slice(n,n+10)" class="small-block-grid-1 medium-block-grid-3 large-block-grid-3">
+            <li>
+                <a href="#/tasks/{{task._id}}">{{task.name}}</a>
+            </li>
+            <li>
+                <span>Deadline: {{task.dealine}}</span>
+                <br>
+                <span>Assigned to: {{task.assignedUserName}}</span>
+            </li>
+            <li>
+                <button ng-click="deleteTask()" class="button tiny info">Delete</button>
+            </li>
+          </ul>
+        <!--</li>-->
+        <!--<li class="arrow"><a href="">&raquo;</a></li>-->
+</div>

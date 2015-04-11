@@ -1,0 +1,57 @@
+<div class="row text-center">
+    <div><h3>Add Task</h3></div>
+</div>
+
+<div class="list">	
+	<form>
+	  <div class="row">
+
+          <div class="small-12 columns">
+          	Name*
+            <input ng-model="task_name" type="text" placeholder ="Task Name">
+          </div>
+
+          <div class="small-12 columns" ng-show="empty_task" >
+            Task name is required!
+          </div>        
+
+          <div class="small-12 columns">
+          	Description
+            <input ng-model="task_description" type="text" placeholder ="Task Description">
+          </div>    
+
+          <!-- <div class="small-12 columns">
+          	Assigned User
+            <select ng-model="assigned_user_name" class = "select">
+      				<option ng-repeat="user in users" value="user._id">{{user.name}}</option>
+    				</select>
+          </div>    -->
+          <div class="small-12 columns">
+          	Assigned User
+            <select ng-model="assigned_user" class = "select" ng-options="user.name for user in users">
+      				<option value="">{{user.name}}</option>
+    				</select>
+          </div>   
+
+
+          <div class="small-12 columns">
+          	Deadline*
+          	<datepicker date-min-limit="2014/07/04" date-max-limit="2020/09/09">
+        			<input placeholder ="Task Deadline" type="text" ng-model="task_deadline"/>
+      			</datepicker>
+          </div>
+
+          <div class="small-12 columns" ng-show="empty_deadline" >
+            Deadline is required!
+          </div> 
+
+          <div class="small-12 columns" ng-show="addTaskSuccess" >
+            Task {{added_task_name}} has been added!
+          </div>
+    </div>
+    <div class="text-center">
+      <button ng-click="addTaskInfo()" class="button tiny info">Submit</button>
+    </div>
+  </form>
+</div>
+

@@ -1,0 +1,48 @@
+<div class="row text-center">
+    <div><h3>Add User</h3></div>
+</div>
+
+<div class="list">	
+	<form>
+	  <div class="row">
+          <div class="small-12 columns">
+          	Name*
+            <input ng-model="user_name" type="text" placeholder ="Name">
+          </div>
+
+          <div class="small-12 columns" ng-show="empty_user" >
+            Name is required!
+          </div>        
+
+          <div class="small-12 columns">
+          	Email*
+            <input ng-model="user_email" type="text" placeholder ="Email">
+          </div>    
+
+          <div class="small-12 columns" ng-show="empty_email" >
+            Email is required!
+          </div>    
+
+          <div class="small-12 columns" ng-show="addSuccess" >
+            User {{added_user_name}} has been added!
+          </div> 
+
+          <div class="small-12 columns" ng-show="duplicateEmail" >
+            This email already exists!
+          </div> 
+
+    </div>
+    <div class="text-center">
+      <button ng-click="addUserInfo()" class="button tiny info">Submit</button>
+    </div>
+
+ <!--    <div class="small-12 columns">
+    	add task
+      <input ng-model="user_task" type="text">
+    </div>  
+
+    <div class="text-center">
+      <button ng-click="updateUserInfo()" class="button tiny info">Update</button>
+    </div> -->
+  </form>
+</div>
