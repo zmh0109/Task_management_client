@@ -1,47 +1,42 @@
-// var utApp = angular.module('utApp', ['ngRoute', 'utControllers', 'utServices']);
+// var demoApp = angular.module('demoApp', ['demoControllers']);
 
-// utApp.run(function($rootScope) {
-//     $rootScope.$on('$viewContentLoaded', function () {
-//         $(document).foundation();
-//     });
-// });
-
-// utApp.config(['$routeProvider', function($routeProvider){
-//   $routeProvider,
-//     when('/users', {
-//       templateUrl: './partials/users.html',
-//       controller: 'usersCtrl'
-//     }).
-//     when('/tasks', {
-//       templateUrl: './partials/tasks.html',
-//       controller: 'tasksCtrl'
-//     }).    
-//     otherwise(
-//         redirectTo: '/users'
-//       );
-// }]);
-
-var demoApp = angular.module('demoApp', ['ngRoute', 'demoControllers', 'demoServices']);
+var demoApp = angular.module('demoApp', ['720kb.datepicker','ngRoute', 'demoControllers', 'demoServices']);
 
 demoApp.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.
-    when('/firstview', {
-    templateUrl: 'partials/firstview.html',
-    controller: 'FirstController'
-  }).
-  when('/secondview', {
-    templateUrl: 'partials/secondview.html',
-    controller: 'SecondController'
-  }).
-  when('/settings', {
-    templateUrl: 'partials/settings.html',
-    controller: 'SettingsController'
-  }).
-  when('/llamalist', {
-    templateUrl: 'partials/llamalist.html',
-    controller: 'LlamaListController'
-  }).
-  otherwise({
-    redirectTo: '/settings'
-  });
+    $routeProvider.
+        when('/users', {
+            templateUrl: 'partials/users.html',
+            controller: 'UsersController'
+        }).
+        when('/tasks', {
+            templateUrl: 'partials/tasks.html',
+            controller: 'TasksController'
+        }).
+        when('/setting', {
+            templateUrl: 'partials/setting.html',
+            controller: 'SettingController'
+        }).
+        when('/add_user', {
+            templateUrl: 'partials/add_user.html',
+            controller: 'AddUserController'
+        }).
+        when('/add_task', {
+            templateUrl: 'partials/add_task.html',
+            controller: 'AddTaskController'
+        }).
+        when('/users/:userID', {
+            templateUrl: 'partials/user_info.html',
+            controller: 'UserInfoController'
+        }).
+        when('/tasks/:taskID', {
+            templateUrl: 'partials/task_info.html',
+            controller: 'TaskInfoController'
+        }).
+        when('/tasks/:taskID/edit', {
+            templateUrl: 'partials/edit_task.html',
+            controller: 'EditTaskController'
+        }).
+        otherwise({
+            redirectTo: '/setting'
+        });
 }]);
