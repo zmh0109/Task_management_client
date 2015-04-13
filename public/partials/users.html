@@ -5,21 +5,16 @@
 	<h4>Users</h4>
 </div>
 
-<div class = "row text-center">	
-	<ul ng-repeat="user in users" class="small-block-grid-1 medium-block-grid-3 large-block-grid-3">
-			<li>
-				<a ng-click="passToUserInfo()" href="#/users/{{user._id}}">{{user.name}}</a>
-            </li>
-            <li>
-             <span>{{user.email}}</span>
-			</li>
-            <li>
-                <button ng-click="deleteUser()" class="button tiny info" >Delete</button>
-            </li>
-
-
-
-	</ul>
+<div class = "row text-center">
+	<div ng-repeat="user in usersData">
+			<div>
+				<a href="#/users/{{user._id}}">{{user.name}}</a> &nbsp;&nbsp;&nbsp;&nbsp; {{user.email}}
+				<!-- <br>{{user._id}} -->
+				<!-- <div class="text-center"> -->
+	      	<button ng-click="deleteUser(user._id)" class="button tiny info">Delete</button>
+	    	<!-- </div> -->
+		</div>
+	</div>
 </div>
 
 

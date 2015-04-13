@@ -21,18 +21,29 @@
           </div>    
 
           <div class="small-12 columns">
-          	Assigned User
+          	<!-- Assigned User
             <select ng-model="assigned_user_id" class = "select">
-      				<option ng-repeat="user in usersData" value="user._id">{{user.name}}</option>
-    				</select>
+      				<option ng-repeat="user in usersData" value={{user._id}}>{{user.name}}</option>
+    				</select> -->
+            Assigned User
+            <select ng-model="assigned_user" class = "select" ng-options="user.name for user in usersData"></select>
           </div>   
-<!--           <div class="small-12 columns">
+
+         <!--  <div class="small-12 columns">
+            Assigned User 1
+            <select ng-model="assigned_user_id" class = "select" ng-options = "">
+              <option ng-repeat="user in usersData" value={{user._id}}>{{user.name}}</option>
+            </select>
+          </div>   
+ -->
+
+
+   <!--        <div class="small-12 columns">
           	Assigned User
             <select ng-model="assigned_user" class = "select" ng-options="user.name for user in usersData">
       				<option value="">{{user.name}}</option>
     				</select>
           </div>    -->
-
 
           <div class="small-12 columns">
           	Deadline*
@@ -45,14 +56,19 @@
             Deadline is required!
           </div> 
 
-          <!-- <form class="small-12 columns"  >
-            Completed: 
-            <input class ="inputRadio" type="radio" name="order" ng-click="reverse=false" checked="checked"/>YES
-            <input class ="inputRadio" type="radio" name="order" ng-click="reverse=true"/>NO<br/>
-          </form>  -->
+          <div class="small-12 columns">
+            Completed: &nbsp;&nbsp;
+          <form class="small-12 columns">
+            <input type="radio" ng-checked="completed" ng-click="completed=true">
+            &nbsp;YES  
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" ng-checked="!completed" ng-click="completed=false"/>
+            &nbsp;NO<br/>
+          </form> 
+        </div>
 
-          <div class="small-12 columns" ng-show="addTaskSuccess" >
-            Task {{added_task_name}} has been edited!
+          <div class="small-12 columns" ng-show="editTaskSuccess" >
+            Task {{task_name}} has been edited!
           </div>
     </div>
     <div class="text-center">

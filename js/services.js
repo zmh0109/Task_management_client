@@ -1,38 +1,4 @@
-// js/services/todos.js
-// angular.module('demoServices', [])
-//         .factory('CommonData', function(){
-//         var data = "";
-//         return{
-//             getData : function(){
-//                 return data;
-//             },
-//             setData : function(newData){
-//                 data = newData;                
-//             }
-//         }
-//     })
-//     .factory('Llamas', function($http, $window) {      
-//         return {
-//             get : function() {
-//                 var baseUrl = $window.sessionStorage.baseurl;
-//                 return $http.get(baseUrl+'/api/llamas');
-//             }
-//         }
-//     })
-//     ;
-
 angular.module('demoServices', [])
-    // .factory('CommonData', function(){
-    //     var data = "";
-    //     return{
-    //         getData : function(){
-    //             return data;
-    //         },
-    //         setData : function(newData){
-    //             data = newData;                
-    //         }
-    //     }
-    // })
     .factory('Users', function($http, $window) {      
         return {
             post: function(msg, callback) {
@@ -50,8 +16,14 @@ angular.module('demoServices', [])
             update: function(userID, msg, callback){
                 var baseUrl = $window.sessionStorage.baseurl;
                 $http.put(baseUrl+'/api/users'+'/'+userID, msg).success(function(){
-                        callback();
+                    callback();
                 });                
+            },
+            delete_user: function(userID, callback){
+                var baseUrl = $window.sessionStorage.baseurl;
+                $http.delete(baseUrl+'/api/users'+'/'+userID).success(function(){
+                    callback();
+                });                 
             }
             // get: function() {
             //     var baseUrl = $window.sessionStorage.baseurl;
@@ -70,14 +42,20 @@ angular.module('demoServices', [])
             get_tasks_data: function(callback){
                 var baseUrl = $window.sessionStorage.baseurl;
                 $http.get(baseUrl+'/api/tasks').success(function(data){
-                        callback(data);
+                    callback(data);
                 });
             },
             update: function(taskID, msg, callback){
                 var baseUrl = $window.sessionStorage.baseurl;
                 $http.put(baseUrl+'/api/tasks'+'/'+taskID, msg).success(function(){
-                        callback();
+                    callback();
                 });                
+            },
+            delete_task: function(taskID, callback){
+                var baseUrl = $window.sessionStorage.baseurl;
+                $http.delete(baseUrl+'/api/tasks'+'/'+taskID).success(function(){
+                    callback();
+                });                 
             }
             // get: function() {
             //     var baseUrl = $window.sessionStorage.baseurl;
