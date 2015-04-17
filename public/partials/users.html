@@ -1,20 +1,18 @@
-<div class = "row text-center">
+<div class = "row text-right">
 	<a class="button" href="#/add_user">Add User</a>
 </div>
 <div class = "row text-center">
-	<h4>Users</h4>
+	<h4>User List</h4>
+    <br>
 </div>
 
 <div class = "row text-center">
-	<div ng-repeat="user in usersData">
-			<div>
-				<a href="#/users/{{user._id}}">{{user.name}}</a> &nbsp;&nbsp;&nbsp;&nbsp; {{user.email}}
-				<!-- <br>{{user._id}} -->
-				<!-- <div class="text-center"> -->
-	      	<button ng-click="deleteUser(user._id)" class="button tiny info">Delete</button>
-	    	<!-- </div> -->
-		</div>
-	</div>
+    <ul ng-repeat="user in usersData" class="small-block-grid-1 medium-block-grid-3 large-block-grid-3">
+
+        <li><a href="#/users/{{user._id}}"><b>{{user.name}}</b></a></li>
+        <li><b>{{user.email}}</b></li>
+        <li><button ng-click="deleteUser(user._id)" class="button tiny info" style="color:white; background-color:red">Delete</button></li>
+    </ul>
 </div>
 
 

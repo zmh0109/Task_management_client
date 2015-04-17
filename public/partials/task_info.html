@@ -1,11 +1,13 @@
-<div class="text-center">
-	<h3>Task</h3>
-	<h4>gotta get this done</h4>
-	<a href="#/tasks/{{task._id}}/edit"><button ng-click="editTask()" class="button tiny info">Edit Task</button></a>
-	<br>
-	<p>Name: {{task.name}}</p>	
-	<p>Description: {{task.description}}</p>
-	<p>Deadline: {{task.deadline}}</p>
-	<p>Completed: {{task.completed}}</p>
-	<p>Assigned: {{task.assignedUserName}}</p>
+<div class="row text-left">
+    <div class=" text-center ">
+	  <h3>Task Information</h3>
+      <a href="#/tasks/{{task._id}}/edit"><button ng-click="editTask()" class="button tiny info">Edit Task</button></a>
+	</div>
+    <div class="large-12  small-12  large-centered columns">
+	   <p><b>Name:</b> {{task.name}}</p>
+	   <p><b>Description:</b> {{task.description}}</p>
+	   <p><b>Deadline:</b> {{task.deadline}}</p>
+	   <p><b>Completed Status:</b> {{task.completed}}</p>
+	   <p><b>Assigned:</b> {{task.assignedUserName}}</p>
+    </div>
 </div>

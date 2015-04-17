@@ -2,7 +2,12 @@
 	<div class="text-right">
     <a class="button" href="#/add_task">Add Task</a>
   </div>
-  <div class="text-left">
+<div class = "row text-center">
+        <h4>Tasks List</h4>
+        <br>
+</div>
+
+<div class="text-left">
 	  <form>
 	   	Pending: &nbsp;
 	    <input type="radio" name="PCA" ng-click="ToshowPending()" checked="checked"/> 
@@ -28,25 +33,29 @@
     </form>
 </div>
 
-<div class="row text-center">
-    <button ng-click="prev()">Previous</button>
-    <button ng-click="next()" class="right ">Next</button>
+<div class="row ">
+    <div class="large-1  small-4  text-left columns">
+        <button  class="button tiny info" ng-click="prev()">Prev</button>
+    </div>
+    <div class="large-1  small-4 text-right columns">
+        <button  class="button tiny info" ng-click="next()" >Next</button>
+    </div>
 </div>
 
-<div class="row text-center pagination">	
-	<ul ng-repeat="task in tasksToShow.slice(n, n+10)" class="small-block-grid-1 medium-block-grid-3 large-block-grid-3">
-		<li>
-			<a href="#/tasks/{{task._id}}">{{task.name}}</a>
+<div class="row text-center ">
+	<ul ng-repeat="task in tasksToShow.slice(n, n+10)" class="small-block-grid-1 medium-block-grid-3 large-block-grid-3" >
+		<li class="text-left">
+			<a href="#/tasks/{{task._id}}"><b>{{task.name}}</b></a>
 		</li>
-		<li>
-			<span>Deadline: {{task.deadline}}</span>
+		<li class="text-left">
+			<span><b>Deadline:</b> {{task.deadline}}</span>
 			<br>
-			<span>Date created: {{task.dateCreated}}</span>
+			<span><b>Date created:</b> {{task.dateCreated}}</span>
 			<br>
-			Assigned to: {{task.assignedUserName}}
+			<span><b>Assigned to:</b> {{task.assignedUserName}}</span>
 		</li>
-		<li>
-			<button ng-click="deleteTask(task._id)" class="button tiny info">Delete</button>
+		<li >
+			<button ng-click="deleteTask(task._id)" class="button tiny info" style="color:white; background-color:red">Delete</button>
 		</li>
 	</ul>
 

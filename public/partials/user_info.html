@@ -1,10 +1,13 @@
 <div class = "row text-center">	
 	<h3>User Profile</h3>
 	<div>
-		{{user.name}} &nbsp;&nbsp;&nbsp;&nbsp; {{user.email}}
-		<!-- <br>{{user._id}} -->
+		<span><b>Name:</b> {{user.name}}</span>
+        <br>
+        <span><b>Email:</b> {{user.email}}</span>
+
 	</div>
-	<h3>Pending Tasks</h3>
+    <br>
+	<h3><b>Pending Tasks</b></h3>
 	<div ng-repeat="task in pendingTasks">
 		{{task.name}} &nbsp;&nbsp;&nbsp;&nbsp; {{task.deadline}} &nbsp;&nbsp;
 		<button ng-click="completeTask(task._id)" class="button tiny info">Completed</button>
